@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+
+<h2>Movies</h2>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            Movies
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

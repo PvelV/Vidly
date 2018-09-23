@@ -9,10 +9,20 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random()
+        public ActionResult Index()
         {
-            var movie = new Movie { Name = "Test Movie 1" };
+            var movies = new List<Movie>
+            {
+                new Movie { Id = 0,  Name = "Test Movie 1" },
+                new Movie { Id = 1,  Name = "Test Movie 2" }
+            };
+
+            return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = new Movie { Name = "Test Movie 1" } ;
             return View(movie);
         }
     }
