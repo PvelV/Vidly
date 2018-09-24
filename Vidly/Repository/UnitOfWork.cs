@@ -23,5 +23,10 @@ namespace Vidly.Repository
         {
             return db.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            db.Dispose();
+        }
     }
 }

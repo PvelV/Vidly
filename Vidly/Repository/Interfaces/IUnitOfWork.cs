@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vidly.Repository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         int Complete();
     }
