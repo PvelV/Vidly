@@ -26,7 +26,7 @@ namespace Vidly.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-            this.Configuration.LazyLoadingEnabled = false;
+          //  this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
