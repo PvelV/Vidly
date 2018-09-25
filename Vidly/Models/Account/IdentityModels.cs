@@ -29,6 +29,14 @@ namespace Vidly.Models
             this.Configuration.LazyLoadingEnabled = false;
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>().Property(c => c.FirstName).IsRequired().HasMaxLength(255);
+            modelBuilder.Entity<Customer>().Property(c => c.LastName).IsRequired().HasMaxLength(255);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

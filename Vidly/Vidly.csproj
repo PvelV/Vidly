@@ -214,11 +214,28 @@
     <Compile Include="Migrations\201809232101391_fix.Designer.cs">
       <DependentUpon>201809232101391_fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809242038192_Customer_IsSubscribed.cs" />
+    <Compile Include="Migrations\201809242038192_Customer_IsSubscribed.Designer.cs">
+      <DependentUpon>201809242038192_Customer_IsSubscribed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242043344_AddMembershipType.cs" />
+    <Compile Include="Migrations\201809242043344_AddMembershipType.Designer.cs">
+      <DependentUpon>201809242043344_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242044141_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201809242044141_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201809242044141_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.cs" />
+    <Compile Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.Designer.cs">
+      <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
     <Compile Include="Models\Account\ManageViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Interfaces\IRepository.cs" />
@@ -318,6 +335,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809232101391_fix.resx">
       <DependentUpon>201809232101391_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242038192_Customer_IsSubscribed.resx">
+      <DependentUpon>201809242038192_Customer_IsSubscribed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242043344_AddMembershipType.resx">
+      <DependentUpon>201809242043344_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242044141_PopulateMembershipTypes.resx">
+      <DependentUpon>201809242044141_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.resx">
+      <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
