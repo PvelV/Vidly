@@ -22,6 +22,8 @@ namespace Vidly.Models
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -33,7 +35,7 @@ namespace Vidly.Models
         {
             modelBuilder.Entity<Customer>().Property(c => c.FirstName).IsRequired().HasMaxLength(255);
             modelBuilder.Entity<Customer>().Property(c => c.LastName).IsRequired().HasMaxLength(255);
-            modelBuilder.Entity<Customer>().Property(c => c.Birthday).IsOptional();
+            modelBuilder.Entity<Customer>().Property(c => c.BirthDate).IsOptional();
 
             modelBuilder.Entity<Movie>().HasRequired(m => m.Genre);
 
