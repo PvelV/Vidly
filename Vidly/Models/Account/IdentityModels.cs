@@ -33,6 +33,15 @@ namespace Vidly.Models
         {
             modelBuilder.Entity<Customer>().Property(c => c.FirstName).IsRequired().HasMaxLength(255);
             modelBuilder.Entity<Customer>().Property(c => c.LastName).IsRequired().HasMaxLength(255);
+            modelBuilder.Entity<Customer>().Property(c => c.Birthday).IsOptional();
+
+            modelBuilder.Entity<Movie>().HasRequired(m => m.Genre);
+
+
+            modelBuilder.Entity<MembershipType>().Property(t => t.Name).IsRequired().HasMaxLength(255);
+
+            modelBuilder.Entity<Genre>().Property(g => g.Name).IsRequired().HasMaxLength(255);
+
 
             base.OnModelCreating(modelBuilder);
         }

@@ -9,6 +9,7 @@ namespace Vidly.Repository
     public interface IUnitOfWork : IDisposable
     {
         ICustomerRepository Customers { get; }
+        IMovieRepository Movies { get; }
 
         int Complete();
     }

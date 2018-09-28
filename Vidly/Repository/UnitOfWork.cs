@@ -13,12 +13,14 @@ namespace Vidly.Repository
         private readonly ApplicationDbContext db;
         
         public ICustomerRepository Customers { get; private set; }
+        public IMovieRepository Movies { get; private set; }
 
         public UnitOfWork(ApplicationDbContext _db)
         {
             db = _db;
 
             Customers = new CustomerRepository(_db.Customers);
+            Movies = new MovieRepository(_db.Movies);
         }
 
 

@@ -238,18 +238,57 @@
     <Compile Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.Designer.cs">
       <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809281353585_MembershipTypeNameRequired.cs" />
+    <Compile Include="Migrations\201809281353585_MembershipTypeNameRequired.Designer.cs">
+      <DependentUpon>201809281353585_MembershipTypeNameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281400440_MembershipTypeNameRequired1.cs" />
+    <Compile Include="Migrations\201809281400440_MembershipTypeNameRequired1.Designer.cs">
+      <DependentUpon>201809281400440_MembershipTypeNameRequired1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281407508_CustomerBirhtdayAdded.cs" />
+    <Compile Include="Migrations\201809281407508_CustomerBirhtdayAdded.Designer.cs">
+      <DependentUpon>201809281407508_CustomerBirhtdayAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281408103_PopulateCustomerBirhtday.cs" />
+    <Compile Include="Migrations\201809281408103_PopulateCustomerBirhtday.Designer.cs">
+      <DependentUpon>201809281408103_PopulateCustomerBirhtday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281423367_GenreAdded.cs" />
+    <Compile Include="Migrations\201809281423367_GenreAdded.Designer.cs">
+      <DependentUpon>201809281423367_GenreAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281424092_GenrePopulated.cs" />
+    <Compile Include="Migrations\201809281424092_GenrePopulated.Designer.cs">
+      <DependentUpon>201809281424092_GenrePopulated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281435172_GenreFix.cs" />
+    <Compile Include="Migrations\201809281435172_GenreFix.Designer.cs">
+      <DependentUpon>201809281435172_GenreFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281437025_PopulateMovies.cs" />
+    <Compile Include="Migrations\201809281437025_PopulateMovies.Designer.cs">
+      <DependentUpon>201809281437025_PopulateMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281451501_PopulateMovies2.cs" />
+    <Compile Include="Migrations\201809281451501_PopulateMovies2.Designer.cs">
+      <DependentUpon>201809281451501_PopulateMovies2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
     <Compile Include="Models\Account\ManageViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Repository\Interfaces\IMovieRepository.cs" />
     <Compile Include="Repository\Interfaces\IRepository.cs" />
     <Compile Include="Repository\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Repository\MovieRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Startup.cs" />
@@ -357,6 +396,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.resx">
       <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281353585_MembershipTypeNameRequired.resx">
+      <DependentUpon>201809281353585_MembershipTypeNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281400440_MembershipTypeNameRequired1.resx">
+      <DependentUpon>201809281400440_MembershipTypeNameRequired1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281407508_CustomerBirhtdayAdded.resx">
+      <DependentUpon>201809281407508_CustomerBirhtdayAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281408103_PopulateCustomerBirhtday.resx">
+      <DependentUpon>201809281408103_PopulateCustomerBirhtday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281423367_GenreAdded.resx">
+      <DependentUpon>201809281423367_GenreAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281424092_GenrePopulated.resx">
+      <DependentUpon>201809281424092_GenrePopulated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281435172_GenreFix.resx">
+      <DependentUpon>201809281435172_GenreFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281437025_PopulateMovies.resx">
+      <DependentUpon>201809281437025_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281451501_PopulateMovies2.resx">
+      <DependentUpon>201809281451501_PopulateMovies2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
