@@ -33,19 +33,43 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
-        [HttpGet]
-        public ActionResult Create()
+        public ActionResult Edit(int id)
         {
-            var membershipTypes = db.MembershipTypes.GetAll();
-            var viewModel = new CreateCustomerViewModel { Customer = new Customer(), MembershipTypes = membershipTypes };
-           
+            var customer = db.Customers.Get(id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel { Customer = customer, MembershipTypes = db.MembershipTypes.GetAll() };
+
+            return View("CustomerForm", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult CustomerForm()
+        {
+            var viewModel = new CustomerFormViewModel { Customer = new Customer(), MembershipTypes = db.MembershipTypes.GetAll() };
+
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(CreateCustomerViewModel vm)
+        public ActionResult Save(CustomerFormViewModel vm)
         {
-            db.Customers.Add(vm.Customer);
+            if (vm.Customer.Id == 0)
+            {
+                db.Customers.Add(vm.Customer);
+            }
+            else
+            {
+                var customerInDb = db.Customers.Get(vm.Customer.Id);
+                customerInDb.FirstName = vm.Customer.FirstName;
+                customerInDb.LastName= vm.Customer.LastName;
+                customerInDb.BirthDate= vm.Customer.BirthDate;
+                customerInDb.IsSubscribed= vm.Customer.IsSubscribed;
+                customerInDb.MembershipType= vm.Customer.MembershipType;
+            }
+
             db.Complete();
 
             return RedirectToAction("Index", "Customers");
