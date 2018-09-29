@@ -11,10 +11,11 @@ namespace Vidly.Repository
     {
 
         private readonly ApplicationDbContext db;
-        
+
         public ICustomerRepository Customers { get; private set; }
         public IMovieRepository Movies { get; private set; }
         public IRepository<MembershipType> MembershipTypes { get; private set; }
+        public IRepository<Genre> Genres { get; private set; }
 
         public UnitOfWork(ApplicationDbContext _db)
         {
@@ -23,6 +24,7 @@ namespace Vidly.Repository
             Customers = new CustomerRepository(_db.Customers);
             Movies = new MovieRepository(_db.Movies);
             MembershipTypes = new Repository<MembershipType>(_db.MembershipTypes);
+            Genres = new Repository<Genre>(_db.Genres);
         }
 
 

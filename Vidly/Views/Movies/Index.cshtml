@@ -12,10 +12,12 @@
 
     @foreach (var movie in Model)
     {
-    <tr>
-        <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
-        <td>@movie.Genre.Name</td>
-    </tr>
+        <tr>
+            <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+            <td>@movie.Genre.Name</td>
+        </tr>
     }
 
 </table>
+
+@Html.ActionLink("Create Movie", "Create", "Movies", null, new { @class = "btn btn-primary" })

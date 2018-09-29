@@ -45,12 +45,18 @@ namespace Vidly.Controllers
             return View("CustomerForm", viewModel);
         }
 
-        [HttpGet]
         public ActionResult CustomerForm()
         {
             var viewModel = new CustomerFormViewModel { Customer = new Customer(), MembershipTypes = db.MembershipTypes.GetAll() };
 
             return View(viewModel);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            db.Customers.Remove(db.Customers.Get(id));
+            db.Complete();
+            return RedirectToAction("Index", "Customers");
         }
 
         [HttpPost]
