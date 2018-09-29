@@ -278,6 +278,10 @@
     <Compile Include="Migrations\201809281605332_test.Designer.cs">
       <DependentUpon>201809281605332_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809291904541_MovieValidation.cs" />
+    <Compile Include="Migrations\201809291904541_MovieValidation.Designer.cs">
+      <DependentUpon>201809291904541_MovieValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
@@ -285,6 +289,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -434,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809281605332_test.resx">
       <DependentUpon>201809281605332_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809291904541_MovieValidation.resx">
+      <DependentUpon>201809291904541_MovieValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

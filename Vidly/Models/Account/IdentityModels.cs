@@ -37,8 +37,10 @@ namespace Vidly.Models
             modelBuilder.Entity<Customer>().Property(c => c.LastName).IsRequired().HasMaxLength(255);
             modelBuilder.Entity<Customer>().Property(c => c.BirthDate).IsOptional();
 
+            modelBuilder.Entity<Movie>().Property(c => c.Name).IsRequired().HasMaxLength(255);
+            modelBuilder.Entity<Movie>().Property(c => c.DateAdded).IsRequired();
+            modelBuilder.Entity<Movie>().Property(c => c.NumberInStock).IsRequired();
             modelBuilder.Entity<Movie>().HasRequired(m => m.Genre);
-
 
             modelBuilder.Entity<MembershipType>().Property(t => t.Name).IsRequired().HasMaxLength(255);
 

@@ -6,24 +6,31 @@
 
 @using (@Html.BeginForm("Save", "Customers"))
 {
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <label for="Customer_FirstName">First Name</label>
         @Html.TextBoxFor(m => m.Customer.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.FirstName)
     </div>
 
     <div class="form-group">
         <label for="Customer_LastName">Last Name</label>
         @Html.TextBoxFor(m => m.Customer.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.LastName)
     </div>
 
     <div class="form-group">
         <label for="Customer_BirthDate">Date of Birth</label>
         @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Customer.BirthDate)
+        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
     </div>
 
     <div class="form-group">
         <label>Membership Type</label>
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Customer.MembershipTypeId)
     </div>
 
     <div class="checkbox">
@@ -31,10 +38,16 @@
             @Html.CheckBoxFor(m => m.Customer.IsSubscribed, new { @class = "checkbox" }) Subscribe to newsletter?
         </label>
     </div>
-    @Html.HiddenFor(m=>m.Customer.Id)
-    <button type="submit" class="btn btn-primary" >Save</button>
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.HiddenFor(m => m.MembershipTypes)
+    <button type="submit" class="btn btn-primary">Save</button>
 }
 
-<br/>
-@Html.ActionLink("Delete Cutomer", "Delete", "Customers", new { id= Model.Customer.Id}, new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Delete Cutomer", "Delete", "Customers", new { id = Model.Customer.Id }, new { @class = "btn btn-primary" })
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
 

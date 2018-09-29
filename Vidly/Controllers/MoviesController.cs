@@ -33,19 +33,19 @@ namespace Vidly.Controllers
         }
 
         public ActionResult Edit(int id)
-        {
+        {            
             var movie = db.Movies.Get(id);
 
             if (movie == null)
                 return HttpNotFound();
 
-            var vm = new MovieFormViewModel { Movie = movie, Genres = db.Genres.GetAll() };
+            var vm = new MovieFormViewModel(movie, db.Genres.GetAll());
             return View("MovieForm", vm);
         }
 
         public ActionResult Create()
         {
-            var vm = new MovieFormViewModel { Movie = new Movie(), Genres = db.Genres.GetAll() };
+            var vm = new MovieFormViewModel ( db.Genres.GetAll() );
             return View("MovieForm", vm);
         }
 
@@ -58,22 +58,28 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(MovieFormViewModel movieFormVM)
+        public ActionResult Save(MovieFormViewModel vm)
         {
-            if (movieFormVM.Movie.Id == 0)
+            if (!ModelState.IsValid)
             {
-                movieFormVM.Movie.DateAdded = DateTime.Now;
-                db.Movies.Add(movieFormVM.Movie);
+                vm.Genres = db.Genres.GetAll();
+                return View("MovieForm", vm);
+            }
+
+            if (vm.Id == 0)
+            {
+                vm.DateAdded = DateTime.Now;
+                db.Movies.Add(vm.ToMovie());
             }
             else
             {
-                var movieInDb = db.Movies.Get(movieFormVM.Movie.Id);
+                var movieInDb = db.Movies.Get(vm.Id.Value);
 
-                movieInDb.Name = movieFormVM.Movie.Name;
-                movieInDb.ReleaseDate = movieFormVM.Movie.ReleaseDate;
-                movieInDb.DateAdded = movieFormVM.Movie.DateAdded;
-                movieInDb.GenreId = movieFormVM.Movie.GenreId;
-                movieInDb.NumberInStock = movieFormVM.Movie.NumberInStock;
+                movieInDb.Name = vm.Name;
+                movieInDb.ReleaseDate = vm.ReleaseDate.Value;
+                movieInDb.DateAdded = vm.DateAdded.Value;
+                movieInDb.GenreId = vm.GenreId.Value;
+                movieInDb.NumberInStock = vm.NumberInStock.Value;
             }
 
             db.Complete();

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,6 +20,7 @@ namespace Vidly.Models
 
         public string Name { get { return $"{FirstName} {LastName}"; } }
 
+        [Min18YearsIfMember]
         public DateTime? BirthDate { get; set; }
 
         public bool IsSubscribed { get; set; }
