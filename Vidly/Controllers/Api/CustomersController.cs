@@ -1,10 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Vidly.Models;
+using Vidly.Models.DTOs;
 using Vidly.Repository;
 
 namespace Vidly.Controllers.Api
@@ -19,64 +21,64 @@ namespace Vidly.Controllers.Api
         }
 
 
-        public IEnumerable<Customer> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return db.Customers.GetAll();
+            return Ok(db.Customers.GetAll().Select(Mapper.Map<CustomerDTO>));
         }
 
-        public Customer GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = db.Customers.Get(id);
 
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
-            return customer;
+            return Ok(Mapper.Map<CustomerDTO>(customer));
         }
 
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public IHttpActionResult CreateCustomer(CustomerDTO customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+
+            var customer = Mapper.Map<Customer>(customerDto);
 
             db.Customers.Add(customer);
             db.Complete();
-            return customer;
+
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), Mapper.Map<CustomerDTO>(customer));
         }
 
         [HttpPut]
-        public Customer UpdateCustomer(int id, Customer customer)
+        public IHttpActionResult UpdateCustomer(int id, CustomerDTO customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var customerInDb = db.Customers.Get(id);
 
             if (customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
-            customerInDb.FirstName = customerInDb.FirstName;
-            customerInDb.LastName = customerInDb.LastName;
-            customerInDb.MembershipTypeId = customerInDb.MembershipTypeId;
-            customerInDb.IsSubscribed = customerInDb.IsSubscribed;
-            customerInDb.BirthDate = customerInDb.BirthDate;
-
+            Mapper.Map(customerDto, customerInDb);
             db.Complete();
 
-            return customer;
+            return Ok();
         }
 
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = db.Customers.Get(id);
 
             if (customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return BadRequest();
 
             db.Customers.Remove(customerInDb);
-            db.Complete();                      
+            db.Complete();
+
+            return Ok();
         }
 
     }
