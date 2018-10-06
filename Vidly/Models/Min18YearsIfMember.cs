@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.ViewModels;
 
 namespace Vidly.Models
 {
@@ -10,9 +11,17 @@ namespace Vidly.Models
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var customer = (Customer)validationContext.ObjectInstance;
+            Customer customer;
+            if (validationContext.ObjectInstance is Customer)
+            {
+                customer = (Customer)validationContext.ObjectInstance;
+            }
+            else
+            {
+                customer = ((CustomerFormViewModel)validationContext.ObjectInstance).ToCustomer();
+            }
 
-            if (customer.MembershipTypeId == MembershipType.Unknown || 
+            if (customer.MembershipTypeId == MembershipType.Unknown ||
                 customer.MembershipTypeId == MembershipType.PayAsYouGo)
                 return ValidationResult.Success;
 

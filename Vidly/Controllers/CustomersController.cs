@@ -40,15 +40,13 @@ namespace Vidly.Controllers
             if (customer == null)
                 return HttpNotFound();
 
-            var viewModel = new CustomerFormViewModel { Customer = customer, MembershipTypes = db.MembershipTypes.GetAll() };
-
+            var viewModel = new CustomerFormViewModel(customer, db.MembershipTypes.GetAll());
             return View("CustomerForm", viewModel);
         }
 
         public ActionResult CustomerForm()
         {
-            var viewModel = new CustomerFormViewModel { Customer = new Customer(), MembershipTypes = db.MembershipTypes.GetAll() };
-
+            var viewModel = new CustomerFormViewModel(db.MembershipTypes.GetAll());
             return View(viewModel);
         }
 
@@ -66,18 +64,18 @@ namespace Vidly.Controllers
             if (!ModelState.IsValid)
                 return View("CustomerForm", vm);
 
-            if (vm.Customer.Id == 0)
+            if (vm.Id == 0)
             {
-                db.Customers.Add(vm.Customer);
+                db.Customers.Add(vm.ToCustomer());
             }
             else
             {
-                var customerInDb = db.Customers.Get(vm.Customer.Id);
-                customerInDb.FirstName = vm.Customer.FirstName;
-                customerInDb.LastName= vm.Customer.LastName;
-                customerInDb.BirthDate= vm.Customer.BirthDate;
-                customerInDb.IsSubscribed= vm.Customer.IsSubscribed;
-                customerInDb.MembershipType= vm.Customer.MembershipType;
+                var customerInDb = db.Customers.Get(vm.Id.Value);
+                customerInDb.FirstName = vm.FirstName;
+                customerInDb.LastName= vm.LastName;
+                customerInDb.BirthDate= vm.BirthDate;
+                customerInDb.IsSubscribed= vm.IsSubscribed;
+                customerInDb.MembershipTypeId= vm.MembershipTypeId.Value;
             }
 
             db.Complete();
