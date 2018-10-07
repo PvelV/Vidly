@@ -21,9 +21,12 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-      //      var customers = db.Customers.GetAll();
+            //      var customers = db.Customers.GetAll();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("Index");
 
-            return View();
+            return View("ReadOnlyIndex");
+
         }
 
         public ActionResult Details(int id)
@@ -44,10 +47,11 @@ namespace Vidly.Controllers
             return View("CustomerForm", viewModel);
         }
 
-        public ActionResult CustomerForm()
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public ActionResult Create()
         {
             var viewModel = new CustomerFormViewModel(db.MembershipTypes.GetAll());
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         public ActionResult Delete(int id)
@@ -72,10 +76,10 @@ namespace Vidly.Controllers
             {
                 var customerInDb = db.Customers.Get(vm.Id.Value);
                 customerInDb.FirstName = vm.FirstName;
-                customerInDb.LastName= vm.LastName;
-                customerInDb.BirthDate= vm.BirthDate;
-                customerInDb.IsSubscribed= vm.IsSubscribed;
-                customerInDb.MembershipTypeId= vm.MembershipTypeId.Value;
+                customerInDb.LastName = vm.LastName;
+                customerInDb.BirthDate = vm.BirthDate;
+                customerInDb.IsSubscribed = vm.IsSubscribed;
+                customerInDb.MembershipTypeId = vm.MembershipTypeId.Value;
             }
 
             db.Complete();

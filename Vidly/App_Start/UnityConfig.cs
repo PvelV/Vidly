@@ -2,6 +2,8 @@ using System;
 
 using Unity;
 using Unity.AspNet.Mvc;
+using Unity.Injection;
+using Vidly.Controllers;
 using Vidly.Repository;
 
 namespace Vidly
@@ -45,6 +47,8 @@ namespace Vidly
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
+            container.RegisterType<AccountController>(new InjectionConstructor());
+
         }
     }
 }

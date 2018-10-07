@@ -12,7 +12,6 @@
     <tr>
         <th>Customer</th>
         <th>Discount Rate</th>
-        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -21,8 +20,6 @@
     </tbody>
 
 </table>
-
-@Html.ActionLink("Create Cutomer", "Create", "Customers", null, new { @class = "btn btn-primary" })
 
 @section scripts
 {
@@ -36,19 +33,11 @@
                 },
                 columns: [
                     {
-                        data: "name", render: function (data, type, customer) {
-                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
-                        }
+                        data: "name"                        
                     },
                     {
                         data: "membershipType.name"
-                    },
-                    {
-                        data: "id",
-                        render: function (data) {
-                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
-                        }
-                    }
+                    }                   
                 ]
             });
 
