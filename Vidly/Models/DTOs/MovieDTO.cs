@@ -17,6 +17,8 @@ namespace Vidly.Models.DTOs
 
         public byte NumberInStock { get; set; }
 
+        public byte NumberAvailable { get; set; }
+
         public int GenreId { get; set; }
     }
 }

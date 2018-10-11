@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Vidly.Models.DTOs
 {
-    public class MembershipTypeDTO
+    public class NewRentalDTO
     {
-        public byte Id { get; set; }
-        public string Name { get; set; }
+        public int CustomerId { get; set; }
+        public List<int> MovieIds { get; set; }
     }
 }

@@ -229,6 +229,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -316,18 +317,48 @@
     <Compile Include="Migrations\201810072155545_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>201810072155545_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810111827496_Rentals.cs" />
+    <Compile Include="Migrations\201810111827496_Rentals.Designer.cs">
+      <DependentUpon>201810111827496_Rentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810111854361_Rentals1.cs" />
+    <Compile Include="Migrations\201810111854361_Rentals1.Designer.cs">
+      <DependentUpon>201810111854361_Rentals1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810112218314_RentalsMultipleMovies.cs" />
+    <Compile Include="Migrations\201810112218314_RentalsMultipleMovies.Designer.cs">
+      <DependentUpon>201810112218314_RentalsMultipleMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810112312015_RentalsMultipleMovies1.cs" />
+    <Compile Include="Migrations\201810112312015_RentalsMultipleMovies1.Designer.cs">
+      <DependentUpon>201810112312015_RentalsMultipleMovies1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810112315072_RentalsMultipleMovies2.cs" />
+    <Compile Include="Migrations\201810112315072_RentalsMultipleMovies2.Designer.cs">
+      <DependentUpon>201810112315072_RentalsMultipleMovies2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810212151515_MoviesNumberAvailable.cs" />
+    <Compile Include="Migrations\201810212151515_MoviesNumberAvailable.Designer.cs">
+      <DependentUpon>201810212151515_MoviesNumberAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810222020033_RentalsChanged.cs" />
+    <Compile Include="Migrations\201810222020033_RentalsChanged.Designer.cs">
+      <DependentUpon>201810222020033_RentalsChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
     <Compile Include="Models\Account\ManageViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DTOs\CustomerDTO.cs" />
-    <Compile Include="Models\DTOs\MembershipTypeDto.cs" />
+    <Compile Include="Models\DTOs\MembershipTypeDTO.cs" />
     <Compile Include="Models\DTOs\MovieDTO.cs" />
+    <Compile Include="Models\DTOs\NewRentalDTO.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -750,6 +781,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810072155545_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>201810072155545_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111827496_Rentals.resx">
+      <DependentUpon>201810111827496_Rentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111854361_Rentals1.resx">
+      <DependentUpon>201810111854361_Rentals1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810112218314_RentalsMultipleMovies.resx">
+      <DependentUpon>201810112218314_RentalsMultipleMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810112312015_RentalsMultipleMovies1.resx">
+      <DependentUpon>201810112312015_RentalsMultipleMovies1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810112315072_RentalsMultipleMovies2.resx">
+      <DependentUpon>201810112315072_RentalsMultipleMovies2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810212151515_MoviesNumberAvailable.resx">
+      <DependentUpon>201810212151515_MoviesNumberAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810222020033_RentalsChanged.resx">
+      <DependentUpon>201810222020033_RentalsChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

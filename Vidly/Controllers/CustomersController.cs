@@ -63,23 +63,24 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(CustomerFormViewModel vm)
+        public ActionResult Save(Customer vm)
         {
             if (!ModelState.IsValid)
-                return View("CustomerForm", vm);
+                return View("CustomerForm", new CustomerFormViewModel(vm, db.MembershipTypes.GetAll()));
 
             if (vm.Id == 0)
             {
-                db.Customers.Add(vm.ToCustomer());
+            //    db.Customers.Add(vm.ToCustomer());
+                db.Customers.Add(vm);
             }
             else
             {
-                var customerInDb = db.Customers.Get(vm.Id.Value);
+                var customerInDb = db.Customers.Get(vm.Id);
                 customerInDb.FirstName = vm.FirstName;
                 customerInDb.LastName = vm.LastName;
                 customerInDb.BirthDate = vm.BirthDate;
                 customerInDb.IsSubscribed = vm.IsSubscribed;
-                customerInDb.MembershipTypeId = vm.MembershipTypeId.Value;
+                customerInDb.MembershipTypeId = vm.MembershipTypeId;
             }
 
             db.Complete();

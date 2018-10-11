@@ -16,6 +16,8 @@ namespace Vidly.Repository
         public IMovieRepository Movies { get; private set; }
         public IRepository<MembershipType> MembershipTypes { get; private set; }
         public IRepository<Genre> Genres { get; private set; }
+        public IRepository<Rental> Rentals { get; private set; }
+
 
         public UnitOfWork(ApplicationDbContext _db)
         {
@@ -25,6 +27,7 @@ namespace Vidly.Repository
             Movies = new MovieRepository(_db.Movies);
             MembershipTypes = new Repository<MembershipType>(_db.MembershipTypes);
             Genres = new Repository<Genre>(_db.Genres);
+            Rentals = new Repository<Rental>(_db.Rentals);
         }
 
 
