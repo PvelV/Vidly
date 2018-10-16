@@ -12,6 +12,7 @@
 ###############################################################################
 #*.cs     diff=csharp
 Vidly/Scripts/* linguist-vendored
+Vidly/Content/* linguist-vendored
 ###############################################################################
 # Set the merge driver for project and solution files
 #
