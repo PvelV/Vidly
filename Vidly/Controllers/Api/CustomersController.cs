@@ -21,9 +21,14 @@ namespace Vidly.Controllers.Api
         }
 
 
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            return Ok(db.Customers.GetAll().Select(Mapper.Map<CustomerDTO>));
+            var customers = db.Customers.GetAll();
+
+            if (!string.IsNullOrWhiteSpace(query))
+                customers = customers.Where(c => c.Name.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 );
+
+            return Ok(customers.Select(Mapper.Map<CustomerDTO>));
         }
 
         public IHttpActionResult GetCustomer(int id)

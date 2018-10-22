@@ -49,6 +49,10 @@ namespace Vidly.Repository
         {
             return dbSet.ToList();
         }
+        public IQueryable<TEntity> GetAsQueryable()
+        {
+            return dbSet;
+        }
 
         public void Remove(TEntity entity)
         {

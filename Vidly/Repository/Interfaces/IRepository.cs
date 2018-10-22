@@ -10,6 +10,8 @@ namespace Vidly.Repository
     {
         TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
+        IQueryable<TEntity> GetAsQueryable();
+
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
         TEntity SingleOrDefault(Expression<Func<TEntity, bool>> predicate);
