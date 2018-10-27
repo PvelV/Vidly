@@ -238,113 +238,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809201914462_InitialCreate.cs" />
-    <Compile Include="Migrations\201809201914462_InitialCreate.Designer.cs">
-      <DependentUpon>201809201914462_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201810271152096_imm.cs" />
+    <Compile Include="Migrations\201810271152096_imm.Designer.cs">
+      <DependentUpon>201810271152096_imm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809231042238_Initial_Migration.cs" />
-    <Compile Include="Migrations\201809231042238_Initial_Migration.Designer.cs">
-      <DependentUpon>201809231042238_Initial_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201810271153155_SeedMigration.cs" />
+    <Compile Include="Migrations\201810271153155_SeedMigration.Designer.cs">
+      <DependentUpon>201810271153155_SeedMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809232101391_fix.cs" />
-    <Compile Include="Migrations\201809232101391_fix.Designer.cs">
-      <DependentUpon>201809232101391_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809242038192_Customer_IsSubscribed.cs" />
-    <Compile Include="Migrations\201809242038192_Customer_IsSubscribed.Designer.cs">
-      <DependentUpon>201809242038192_Customer_IsSubscribed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809242043344_AddMembershipType.cs" />
-    <Compile Include="Migrations\201809242043344_AddMembershipType.Designer.cs">
-      <DependentUpon>201809242043344_AddMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809242044141_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\201809242044141_PopulateMembershipTypes.Designer.cs">
-      <DependentUpon>201809242044141_PopulateMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.cs" />
-    <Compile Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.Designer.cs">
-      <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281353585_MembershipTypeNameRequired.cs" />
-    <Compile Include="Migrations\201809281353585_MembershipTypeNameRequired.Designer.cs">
-      <DependentUpon>201809281353585_MembershipTypeNameRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281400440_MembershipTypeNameRequired1.cs" />
-    <Compile Include="Migrations\201809281400440_MembershipTypeNameRequired1.Designer.cs">
-      <DependentUpon>201809281400440_MembershipTypeNameRequired1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281407508_CustomerBirhtdayAdded.cs" />
-    <Compile Include="Migrations\201809281407508_CustomerBirhtdayAdded.Designer.cs">
-      <DependentUpon>201809281407508_CustomerBirhtdayAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281408103_PopulateCustomerBirhtday.cs" />
-    <Compile Include="Migrations\201809281408103_PopulateCustomerBirhtday.Designer.cs">
-      <DependentUpon>201809281408103_PopulateCustomerBirhtday.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281423367_GenreAdded.cs" />
-    <Compile Include="Migrations\201809281423367_GenreAdded.Designer.cs">
-      <DependentUpon>201809281423367_GenreAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281424092_GenrePopulated.cs" />
-    <Compile Include="Migrations\201809281424092_GenrePopulated.Designer.cs">
-      <DependentUpon>201809281424092_GenrePopulated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281435172_GenreFix.cs" />
-    <Compile Include="Migrations\201809281435172_GenreFix.Designer.cs">
-      <DependentUpon>201809281435172_GenreFix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281437025_PopulateMovies.cs" />
-    <Compile Include="Migrations\201809281437025_PopulateMovies.Designer.cs">
-      <DependentUpon>201809281437025_PopulateMovies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281451501_PopulateMovies2.cs" />
-    <Compile Include="Migrations\201809281451501_PopulateMovies2.Designer.cs">
-      <DependentUpon>201809281451501_PopulateMovies2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809281605332_test.cs" />
-    <Compile Include="Migrations\201809281605332_test.Designer.cs">
-      <DependentUpon>201809281605332_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809291904541_MovieValidation.cs" />
-    <Compile Include="Migrations\201809291904541_MovieValidation.Designer.cs">
-      <DependentUpon>201809291904541_MovieValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810072022554_SeedUsers.cs" />
-    <Compile Include="Migrations\201810072022554_SeedUsers.Designer.cs">
-      <DependentUpon>201810072022554_SeedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810072155545_AddDrivingLicenseToApplicationUser.cs" />
-    <Compile Include="Migrations\201810072155545_AddDrivingLicenseToApplicationUser.Designer.cs">
-      <DependentUpon>201810072155545_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810111827496_Rentals.cs" />
-    <Compile Include="Migrations\201810111827496_Rentals.Designer.cs">
-      <DependentUpon>201810111827496_Rentals.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810111854361_Rentals1.cs" />
-    <Compile Include="Migrations\201810111854361_Rentals1.Designer.cs">
-      <DependentUpon>201810111854361_Rentals1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810112218314_RentalsMultipleMovies.cs" />
-    <Compile Include="Migrations\201810112218314_RentalsMultipleMovies.Designer.cs">
-      <DependentUpon>201810112218314_RentalsMultipleMovies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810112312015_RentalsMultipleMovies1.cs" />
-    <Compile Include="Migrations\201810112312015_RentalsMultipleMovies1.Designer.cs">
-      <DependentUpon>201810112312015_RentalsMultipleMovies1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810112315072_RentalsMultipleMovies2.cs" />
-    <Compile Include="Migrations\201810112315072_RentalsMultipleMovies2.Designer.cs">
-      <DependentUpon>201810112315072_RentalsMultipleMovies2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810212151515_MoviesNumberAvailable.cs" />
-    <Compile Include="Migrations\201810212151515_MoviesNumberAvailable.Designer.cs">
-      <DependentUpon>201810212151515_MoviesNumberAvailable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810222020033_RentalsChanged.cs" />
-    <Compile Include="Migrations\201810222020033_RentalsChanged.Designer.cs">
-      <DependentUpon>201810222020033_RentalsChanged.cs</DependentUpon>
+    <Compile Include="Migrations\201810271330562_SeedMigration2.cs" />
+    <Compile Include="Migrations\201810271330562_SeedMigration2.Designer.cs">
+      <DependentUpon>201810271330562_SeedMigration2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
@@ -737,93 +641,21 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809201914462_InitialCreate.resx">
-      <DependentUpon>201809201914462_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809231042238_Initial_Migration.resx">
-      <DependentUpon>201809231042238_Initial_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809232101391_fix.resx">
-      <DependentUpon>201809232101391_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809242038192_Customer_IsSubscribed.resx">
-      <DependentUpon>201809242038192_Customer_IsSubscribed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809242043344_AddMembershipType.resx">
-      <DependentUpon>201809242043344_AddMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809242044141_PopulateMembershipTypes.resx">
-      <DependentUpon>201809242044141_PopulateMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809251920249_CustomerNameRequiredFluetnApi.resx">
-      <DependentUpon>201809251920249_CustomerNameRequiredFluetnApi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281353585_MembershipTypeNameRequired.resx">
-      <DependentUpon>201809281353585_MembershipTypeNameRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281400440_MembershipTypeNameRequired1.resx">
-      <DependentUpon>201809281400440_MembershipTypeNameRequired1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281407508_CustomerBirhtdayAdded.resx">
-      <DependentUpon>201809281407508_CustomerBirhtdayAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281408103_PopulateCustomerBirhtday.resx">
-      <DependentUpon>201809281408103_PopulateCustomerBirhtday.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281423367_GenreAdded.resx">
-      <DependentUpon>201809281423367_GenreAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281424092_GenrePopulated.resx">
-      <DependentUpon>201809281424092_GenrePopulated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281435172_GenreFix.resx">
-      <DependentUpon>201809281435172_GenreFix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281437025_PopulateMovies.resx">
-      <DependentUpon>201809281437025_PopulateMovies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281451501_PopulateMovies2.resx">
-      <DependentUpon>201809281451501_PopulateMovies2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809281605332_test.resx">
-      <DependentUpon>201809281605332_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809291904541_MovieValidation.resx">
-      <DependentUpon>201809291904541_MovieValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810072022554_SeedUsers.resx">
-      <DependentUpon>201810072022554_SeedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810072155545_AddDrivingLicenseToApplicationUser.resx">
-      <DependentUpon>201810072155545_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810111827496_Rentals.resx">
-      <DependentUpon>201810111827496_Rentals.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810111854361_Rentals1.resx">
-      <DependentUpon>201810111854361_Rentals1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810112218314_RentalsMultipleMovies.resx">
-      <DependentUpon>201810112218314_RentalsMultipleMovies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810112312015_RentalsMultipleMovies1.resx">
-      <DependentUpon>201810112312015_RentalsMultipleMovies1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810112315072_RentalsMultipleMovies2.resx">
-      <DependentUpon>201810112315072_RentalsMultipleMovies2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810212151515_MoviesNumberAvailable.resx">
-      <DependentUpon>201810212151515_MoviesNumberAvailable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810222020033_RentalsChanged.resx">
-      <DependentUpon>201810222020033_RentalsChanged.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810271152096_imm.resx">
+      <DependentUpon>201810271152096_imm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810271153155_SeedMigration.resx">
+      <DependentUpon>201810271153155_SeedMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810271330562_SeedMigration2.resx">
+      <DependentUpon>201810271330562_SeedMigration2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
